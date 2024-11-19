@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  psql:
+    image: postgres:latest
+    container_name: library_service_server_psql
+    ports:
+      - 5433:5432
+    restart: on-failure
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: library_service
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+
+volumes:
+  database-data:
