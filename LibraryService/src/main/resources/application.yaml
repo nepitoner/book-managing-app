@@ -1,0 +1,24 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: library-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/library_service
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: library
+      auto-offset-reset: earliest
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "org.example.dto"
+  liquibase:
+    enabled: true
+    change-log: db/changelog/db.changelog-master.yaml
+    drop-first: true

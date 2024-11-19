@@ -1,0 +1,19 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: book-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/book_service
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+  kafka:
+    producer:
+      group-id: library
+      topic:
+        libraryTopic: book-library-service-topic
+  liquibase:
+    enabled: true
+    change-log: db/changelog/db.changelog-master.yaml
+    drop-first: true
