@@ -2,7 +2,6 @@ package org.example.service;
 
 import org.example.dto.BookDtoRequest;
 import org.example.dto.BookDtoResponse;
-import org.example.dto.BookIdResponse;
 
 import java.util.List;
 import java.util.UUID;
